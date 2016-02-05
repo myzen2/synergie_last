@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'coffee-script-source', '1.8.0'
 group :development, :test do
   gem 'byebug'
 end
@@ -18,7 +19,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'pg'
-gem 'puma'
+gem 'thin'
 gem 'simple_form'
 group :development do
   gem 'better_errors'
