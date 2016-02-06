@@ -1,0 +1,24 @@
+Gemfile
+
+Installing Puma is really easy: just add gem 'puma' to your Gemfile. Done!
+
+This section is way too easy. I'm sorry Puma isn't more complicated. ;)
+Procfile
+
+Heroku attempts to guess how you want to run your site, but sometimes it guesses wrong. I prefer to be a bit more explicit, and in Puma's case, it will guess wrong and use Webrick, so we need to do this step.
+
+Heroku uses a gem called foreman to run your application. Basically, foreman gives you a 'Procfile' that lets you specify different processes and their types, and then foreman manages running them for you.
+
+To use foreman, add it to your Gemfile:
+
+gem 'foreman'
+
+And then make a Procfile:
+
+web: rackup -s puma -p $PORT
+
+This says "I want my web processes to run this command." Simple. We tell rackup to use Puma with the -s flag, for 'server.'
+
+To start up your application, normall you'd run rackup yourself, but now, you use foreman:
+
+$ bundle exec foreman start

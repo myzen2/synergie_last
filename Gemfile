@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise-bootstrap-views'
+gem 'puma'
+gem 'foreman'
 group :development, :test do
   gem 'byebug'
 end
@@ -20,7 +22,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'pg'
-gem 'thin'
 gem 'simple_form'
 group :development do
   gem 'better_errors'
