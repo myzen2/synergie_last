@@ -1,3 +1,6 @@
+#démarrer le serveur
+bundle exec foreman start
+
 Gemfile
 
 Installing Puma is really easy: just add gem 'puma' to your Gemfile. Done!

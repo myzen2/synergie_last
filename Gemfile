@@ -11,6 +11,7 @@ gem 'coffee-script-source', '1.8.0'
 gem 'devise-bootstrap-views'
 gem 'puma'
 gem 'foreman'
+gem 'ts3query', '~> 0.7.0'
 group :development, :test do
   gem 'byebug'
 end

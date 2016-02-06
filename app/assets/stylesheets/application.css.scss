@@ -28,17 +28,6 @@ body {
   /*margin: 10px;
 */}
 
-h1 {
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
-}
-
-h4 {
-  text-align: center;
-}
 
 
 
@@ -81,32 +70,7 @@ h4 {
 }
 
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
 
-/* Special class on .container surrounding .navbar, used for positioning it into place.
-.navbar-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
-}
-
-/* Flip around the padding for proper display in narrow viewports
-.navbar-wrapper > .container {
-  padding-right: 0;
-  padding-left: 0;
-}
-.navbar-wrapper .navbar {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.navbar-wrapper .navbar .container {
-  width: auto;
-}
-
-*/
 
 /* NAVBAR
 ----------------------------------------------------*/
@@ -171,18 +135,35 @@ z-index: 1000;
   text-align: center;
 }
 
-.jumbotron {
-  color: #fff;
-  padding-top: 10px;
-  background-color: #073264;
+#n {
+  color: blue;
 }
 
+#synergie {
+  border: solid 1px blue;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: black;
+  text-align: center;
+  color: #fff;
+  font-size: 60px;
+}
+
+.well {
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 100px;
+}
 
 /* TEAMSPEAK
 ---------------------------------------------------*/
 #teamspeak {
   width: 60%;
-  padding-left: 30px;
+  padding-left: -20px;/*
+  max-height: 300px;*/
+  background-color: transparent;
 }
 
 
@@ -271,9 +252,9 @@ z-index: 1000;
 
 /* Custom navbar fixed after scroll
 ----------------------------------------------------------*/
-/*html, body {
+html, body {
 	height: 4000px;
-}*/
+}
 
 .navbar-fixed {
   top: 0;
