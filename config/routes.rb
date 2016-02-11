@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   root to: 'pages#index'
 
   get 'about' => 'pages#about'
@@ -7,5 +9,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  resources :articles
   get 'visitors' => 'visitors#index'
 end

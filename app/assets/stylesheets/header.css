@@ -10,7 +10,10 @@
 }
 
 /* Header*/
-#main_header_logo { position: absolute; z-index: 1; width: 198px; height: 216px; left:100px; top: 40px;}
+
+/* Logo
+--------------------------*/
+#main_header_logo { position: absolute; z-index: 1; width: 150px; height: 150px; left:50px; top: 60px;}
 #btn_scroll_up { cursor: pointer; background: url('../img/btn_scroll_up.png') center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
 #btn_scroll_up:hover { bottom: 25px; opacity: 1; }
 
