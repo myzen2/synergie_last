@@ -10,7 +10,7 @@
 }
 
 /* Header*/
-#main_header_logo { position: absolute; z-index: 1; width: 198px; height: 216px; left:0; top: 40px;}
+#main_header_logo { position: absolute; z-index: 1; width: 198px; height: 216px; left:100px; top: 40px;}
 #btn_scroll_up { cursor: pointer; background: url('../img/btn_scroll_up.png') center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
 #btn_scroll_up:hover { bottom: 25px; opacity: 1; }
 
@@ -37,7 +37,7 @@
 
 #main_nav ul li a { display: block; padding: 0 15px; height: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-family: 'Sansation', arial; font-size: 13px; color: #fff; }
 #main_nav ul li a:hover,
-#main_nav ul li.active > a { color: #0CF; }
+#main_nav ul li.active > a { color: #000; }
 
 #main_nav ul li.parent_submenu_container > a:after,
 #portal_nav ul li.parent_submenu_container > a:after { content: '\25BC'; position: absolute; top: 14px; color: #FFF; left: 0; width: 100%; text-align: center; font-size: 10px; }
