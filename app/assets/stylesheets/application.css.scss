@@ -201,21 +201,27 @@ z-index: 1000;
   color: #0092D8;
 }
 
+#t {
+  color: #CCCCCC;
+}
+
+
 #synergie {
   border: solid 1px #0092D8;
-  margin-top: 60px;
+  margin-top: 5px;
   margin-bottom: 40px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 10px;
   background-color: #CCCCCC;
-  text-align: center;
+  text-align: left;
   color: #fff;
-  font-size: 60px;
-  background-image: radial-gradient(circle, #000000, #1180FE);
+  font-size: 30px;
+  background-image: radial-gradient(circle, #1180FE, #000000);
 }
 
 .jumbotron {
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 .well {
