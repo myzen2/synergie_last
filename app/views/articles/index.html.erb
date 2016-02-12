@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Liste des articles</h1>
+<br>
+  <table class="table table-bordered">
+    <thead>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th colspan="3">Actions</th>
+    </thead>
+
+    <% @articles.each do |article| %>
+    <tbody class="table table-striped table-bordered table-hover">
+      <td><%= article.titre %></td>
+      <td><%= article.contenu %></td>
+      <td><%= link_to 'Voir', article_path(article), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Editer', edit_article_path(article), class: "btn btn-info" %></td>
+      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger" %></td>
+      </tbody>
+    <% end %>
+
+  </table>
+</div>

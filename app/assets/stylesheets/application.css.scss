@@ -32,6 +32,10 @@ h3 {
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 
 
 
@@ -123,7 +127,7 @@ background-repeat: repeat;
 background-attachment: scroll;
 background-position: 0% 0%;
 background-clip: border-box;
-/*background-origin: padding-box;*/
+background-origin: padding-box;
 background-size: auto auto;
 position: relative;
 box-shadow: 1px 10px 12px #000000;
@@ -134,7 +138,7 @@ position: relative;
 #main_nav
 {
 width: 100%;
-background-image: radial-gradient(circle, #1180FE, #000000);
+background-image: radial-gradient(circle, #000000, #1180FE);
 background-repeat: repeat;
 background-attachment: scroll;
 background-position: 0% 0%;
@@ -162,29 +166,49 @@ left: 0px;
 z-index: 1000;
 }
 
+.navbar-brand {
+  margin-top: -0.6%;
+}
+
+
 
 /* ACCUEIL
 ----------------------------------------------------*/
 
-#accueil {
-  font-size: 30px;
-  text-align: center;
+#accueil span{
+  position:absolute;
+  color:#0CF;
+  background:rgba(0,0,0,.9);
+  padding:15px;
+  border-radius:3px;
+  box-shadow:0 0 2px rgba(0,0,0,.5);
+  transform:scale(0) rotate(-12deg);
+  transition:all .25s;
+  opacity:0;
+  font-size: 20px;
 }
 
+#accueil:hover span, a:focus span{
+  transform:scale(1) rotate(0);
+  opacity:1;
+}
+
+
 #n {
-  color: blue;
+  color: #0092D8;
 }
 
 #synergie {
-  border: solid 1px blue;
+  border: solid 1px #0092D8;
   margin-top: 60px;
   margin-bottom: 40px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: black;
+  background-color: #CCCCCC;
   text-align: center;
   color: #fff;
   font-size: 60px;
+  background-image: radial-gradient(circle, #000000, #1180FE);
 }
 
 .jumbotron {
@@ -278,9 +302,9 @@ th {
 
 /* Custom navbar fixed after scroll
 ----------------------------------------------------------*/
-html, body {
+/*html, body {
 	height: 4000px;
-}
+}*/
 
 .navbar-fixed {
   top: 0;

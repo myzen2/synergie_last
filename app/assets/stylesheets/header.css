@@ -13,7 +13,7 @@
 
 /* Logo
 --------------------------*/
-#main_header_logo { position: absolute; z-index: 1; width: 150px; height: 150px; left:50px; top: 60px;}
+#main_header_logo { position: absolute; z-index: 1; width: 150px; height: 150px; left:50px; top: 60px; shadowed: 1px 20px 20px #000000;}
 #btn_scroll_up { cursor: pointer; background: url('../img/btn_scroll_up.png') center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
 #btn_scroll_up:hover { bottom: 25px; opacity: 1; }
 
@@ -38,9 +38,9 @@
 #main_nav ul li:hover ul.main_nav_submenu,
 #portal_nav ul li:hover ul.main_nav_submenu { display: block; }
 
-#main_nav ul li a { display: block; padding: 0 15px; height: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-family: 'Sansation', arial; font-size: 13px; color: #fff; }
+#main_nav ul li a { display: block; padding: 0 15px; height: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-family: 'Sansation', arial; font-size: 16px; color: #fff; }
 #main_nav ul li a:hover,
-#main_nav ul li.active > a { color: #000; }
+#main_nav ul li.active > a { color: #0CF; }
 
 #main_nav ul li.parent_submenu_container > a:after,
 #portal_nav ul li.parent_submenu_container > a:after { content: '\25BC'; position: absolute; top: 14px; color: #FFF; left: 0; width: 100%; text-align: center; font-size: 10px; }
