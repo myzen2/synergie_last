@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root to: 'pages#index'
+  root to: 'pages#index', concerns: :ArticlesController
 
   get 'about' => 'pages#about'
 
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  
   resources :articles do
     resources :comments
   end
