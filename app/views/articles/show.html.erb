@@ -37,14 +37,30 @@
       </p>
 
       <h2>Ajouter un commentaire :</h2>
-      <%= render 'comments/form' %>
+      <ul>
+        <% if user_signed_in? %>
+
+        <%= render 'comments/form' %>
+
+        <% else %>
+          <li>Vous devez être connecté pour ajouter un commentaire</li>
+        <% end %>
+
+      </ul>
 
       <h2>Commentaires</h2>
       <%= render @article.comments %>
 
 
-      <%= link_to 'Editer', edit_article_path(@article), class: "btn btn-info" %> |
-      <%= link_to 'Retour', articles_path, class: "btn btn-success" %>
+        <% if user_signed_in? %>
+        <%= link_to 'Editer', edit_article_path(@article), class: "btn btn-info" %> |
+        <%= link_to 'Tous les articles', articles_path, class: "btn btn-danger" %>
+
+
+        <% else %>
+
+        <% end %>
+        <%= link_to 'Retour', root_path, class: "btn btn-success" %>
     </div>
   </div>
 </div>

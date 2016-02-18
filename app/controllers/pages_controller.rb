@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def index
     @articles = Article.all
   end
-
+=begin
   def new
     @article = Article.new
   end
@@ -53,4 +53,5 @@ class PagesController < ApplicationController
   def article_params
     params.require(:article).permit(:titre, :contenu, :image)
   end
+=end
 end

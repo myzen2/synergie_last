@@ -16,10 +16,10 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rails-devise_development
+  database: synergie_development
   pool:     5
   username: postgres
-  password: aserty12345
+  password: aserty
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,18 +44,18 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rails-devise_test
+  database: synergie_test
   pool:     5
   username: postgres
-  password: aserty12345
+  password: aserty
   template: template0
 
 production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rails-devise_production
+  database: synergie_production
   pool:     5
   username: postgres
-  password: aserty12345
+  password: aserty
   template: template0
