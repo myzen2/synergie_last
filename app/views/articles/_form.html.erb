@@ -17,39 +17,19 @@
     <%= f.label :titre %><br>
     <%= f.text_field :titre, :class => "form-control", :rows => "1" %>
   </p>
-
+  <p>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, as: :file %>
+  </p>
   <p>
     <%= f.label :contenu %><br>
     <%= f.text_area :contenu, :class => "form-control", :rows => "10" %>
   </p>
 
+
   <p>
     <%= f.submit :class => "btn btn-primary" %>
   </p>
 
-<% end %>
 
-<p>
-    <span>Image field</span>
-    <%= image_fu get_field("hero"), "300x300" %>
-</p>
-<p>
-    <span>Textarea</span>
-    <%= get_field("hero_text") %>
-</p>
-<p>
-    <span>WYSIWYG field</span>
-    <%= raw get_field("bigtext") %>
-</p>
-<p>
-    <span>Text field</span>
-    <%= get_field("facebook_like_url") %>
-</p>
-<p>
-    <span>Resource text (file)</span>
-    <%= link_to "Download PDF file", get_field("pdf_file").url %>
-</p>
-<p>
-    <span>Another page's field</span>
-    <%= get_field("other_text", 2) %>
-</p>
+<% end %>

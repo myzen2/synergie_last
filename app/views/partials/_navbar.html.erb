@@ -5,9 +5,6 @@
     <div class="site_width">
       <nav id="nav_bar" role="navigation">
         <ul>
-
-
-          <a class="navbar-brand" href="/" id="accueil"><img alt="Accueil" <%= image_tag "logo2.png" %></img><span>Accueil</span></a>
           <li class=""><a href="/">Accueil</a></li>
           <li class="parent_submenu_container">
             <a href="/">synergie</a>
@@ -52,11 +49,13 @@
 
           <ul class="navbar-right">
             <% if user_signed_in? %>
-            <li class=""><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+              <li><%= current_user.nom %>
+                <li class=""><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to 'nouvel article', new_article_path %></li>
 
             <% else %>
-            <li class=""><%= link_to "Se connecter", new_user_session_path %></li>
-            <li class=""><%= link_to "S'inscrire", new_user_registration_path %></li>
+              <li class=""><%= link_to "Se connecter", new_user_session_path %></li>
+              <li class=""><%= link_to "S'inscrire", new_user_registration_path %></li>
             <% end %>
 
           </ul>

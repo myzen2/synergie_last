@@ -3,9 +3,13 @@
 one:
   nom: MyString
   prenom: MyString
-  pseudo: MyString
+  date_de_naissance: 2016-02-23 11:33:26
+  adresse: MyString
+  image: MyString
 
 two:
   nom: MyString
   prenom: MyString
-  pseudo: MyString
+  date_de_naissance: 2016-02-23 11:33:26
+  adresse: MyString
+  image: MyString

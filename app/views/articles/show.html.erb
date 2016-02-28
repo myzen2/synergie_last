@@ -12,9 +12,10 @@
         <%= @article.titre %>
       </h1>
 
+
       <!-- Author -->
       <p class="lead">
-        par <a href="#">Nathaniel </a>
+        par <a href="#"><%= current_user.pseudo %> </a>
       </p>
 
       <hr>
@@ -25,7 +26,7 @@
       <hr>
 
       <!-- Preview Image -->
-      <img class="img-responsive" alt="Manuel VALLS" <%= image_tag "Manuel-Valls-au-Parc-des-Princes-le-15-avril-2015_exact1024x768_l.jpg" %>
+      <%= image_tag @article.image %>
 
       <hr>
 

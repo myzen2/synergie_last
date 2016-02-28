@@ -1,24 +1,24 @@
 /* Global */
 ::selection {
-	background-color: #4A4E51;
+	/*background-color: #4A4E51;
 	color: #0CF;
+*/
 }
-
 ::-moz-selection {
-	background-color: #4A4E51;
+	/*background-color: #4A4E51;
 	color: #0CF;
+*/
 }
-
 /* Header*/
 
 /* Logo
 --------------------------*/
-#main_header_logo { position: absolute; z-index: 1; width: 10%; height: 15%; left:10%; top: 60px; shadowed: 1px 20px 20px #000000;}
-#btn_scroll_up { cursor: pointer; background: url('../img/btn_scroll_up.png') center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
+#main_header_logo { position: absolute; z-index: 1; width: 10%; height: 15%; left:10%; top: 10%; shadowed: 1px 20px 20px; }
+#btn_scroll_up { cursor: pointer; background: center center no-repeat; width: 100px; height: 110px; position: fixed; bottom: 15px; right: 15px; z-index: 10; transition: all 0.5s; opacity: 0.5; display: none; }
 #btn_scroll_up:hover { bottom: 25px; opacity: 1; }
 
 #main_header_container { min-height: 600px; margin-bottom: 20px; }
-#main_header { width: 100%; height: 300px; background: url('../img/bg_main_header.png') repeat-x; position: relative; overflow: hidden; }
+#main_header { width: 100%; height: 300px; background: repeat-x; position: relative; overflow: hidden; }
 #main_header_carousel { height: 300px; overflow: hidden; }
 .main_header_carousel_img { width: 100%; height: 300px; background-repeat: no-repeat; background-position: center center; position: absolute; top: 0; left: 0; display: none; }
 #main_header_carousel_nav { text-align: center; position: absolute; bottom: 10px; width: 100%; }
@@ -31,14 +31,14 @@
 /* Nav */
 #main_nav.main_nav_fixed { position: fixed; top: 0; left: 0; z-index: 1000; background-color: #2E68E2;}
 
-#main_nav { width: 100%; height: 60px; background: url('../img/bg_main_nav.png'); position: relative; }
+#main_nav { width: 100%; height: 40px; background: position: relative; }
 #main_nav ul { padding: 0; margin: 0; text-align: center; }
-#main_nav ul li { display: inline-block; line-height: 50px; position: relative; }
+#main_nav ul li { display: inline-block; line-height: 40px; position: relative; }
 
 #main_nav ul li:hover ul.main_nav_submenu,
 #portal_nav ul li:hover ul.main_nav_submenu { display: block; }
 
-#main_nav ul li a { display: block; padding: 0 15px; height: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-family: 'Sansation', arial; font-size: 16px; color: #fff; }
+#main_nav ul li a { display: block; padding: 0 15px; height: 40px; color: #fff; text-decoration: none; text-transform: uppercase; font-family: 'Sansation', arial; font-size: 14px; color: #fff; }
 #main_nav ul li a:hover,
 #main_nav ul li.active > a { color: #0CF; }
 

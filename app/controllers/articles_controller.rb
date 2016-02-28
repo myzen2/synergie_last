@@ -1,19 +1,22 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @articles = Article.all
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
+      flash[:success] = "Votre article a bien été créé"
       redirect_to @article
+
     else
-      render 'new'
+      render 'create'
     end
   end
 
@@ -44,6 +47,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:titre, :contenu, :image)
+    params.require(:article).permit(:user_id, :titre, :contenu, :image)
   end
 end

@@ -13,25 +13,12 @@
         <!-- Blog Entries Column -->
         <div class="col-md-5 col-md-offset-2">
 
-            <!-- First Blog Post -->
-            <h2>
-                <%= link_to 'Blog Post Title', page_path('blogpost') %>
-            </h2>
-            <p class="lead">
-                de <%= link_to 'Start Bootstrap', root_path %>
-            </p>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
-            <hr>
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-            <hr>
-            <p class="apercu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-            <%= link_to ('Read More <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, page_path('blogpost'), :class => "btn btn-primary" %>
-
-            <hr>
-
             <% @articles.each do |article| %>
                 <h2><%= article.titre %></h2>
                 <p><span class="glyphicon glyphicon-time"></span> Publié le <%= article.created_at %></p>
+                <p>
+                  <%= image_tag article.image %>
+                </p>
 
 
                 <p class="apercu"><%= article.contenu[0...200] %></p>
@@ -41,14 +28,10 @@
             <% end %>
 
             <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
+            <div class="">
+              <%= will_paginate @articles %>
+
+            </div>
 
         </div>
 

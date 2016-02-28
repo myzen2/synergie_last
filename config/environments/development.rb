@@ -56,4 +56,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.i18n.available_locales = :fr
+
+  # config paperclip ImageMagick convert
+  Paperclip.options[:command_path] = "/d/ImageMagick/"
 end
