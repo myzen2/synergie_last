@@ -14,6 +14,7 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'will_paginate', '~> 3.0.6'
+gem 'ckeditor_rails'
 
 group :development, :test do
   gem 'byebug'

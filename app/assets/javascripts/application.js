@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
@@ -30,4 +31,8 @@ $(window).scroll(function () {
     $('#nav_bar').removeClass('navbar-fixed');
   }
 });
+});
+
+$('.ckeditor').ckeditor({
+  // optional config
 });
