@@ -5,6 +5,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Synergie Gaming" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Synergie Gaming" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "forem" %>
+    <%= forem_atom_auto_discovery_link_tag %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'logo.png', type: 'image/png' %>
@@ -17,9 +19,14 @@
 
     </header>
     <main role="main">
+      <div class="container">
+
        <%= render 'layouts/messages' %>
        <%= yield %>
+     </div>
     </main>
-    <script src="//cdn.ckeditor.com/4.5.7/full-all/ckeditor.js"></script>
+
+
+
   </body>
 </html>

@@ -14,7 +14,7 @@
             </ul>
           </li>
 
-          <li class=""><a href="http://synergiegaming.fr/index.php/forum/index">Forum</a></li>
+          <li class=""><%= link_to 'forum', forem.root_path %></li>
           <li class=" parent_submenu_container"><a href="#">Nos jeux</a>
             <ul class="main_nav_submenu">
               <li><a href="http://albion-online.team-synergie.fr/">Albion Online</a></li>
@@ -39,7 +39,7 @@
               <li><a href="http://www.team-synergie.fr/mon-live-sur-synergie/">Mon live sur SynergieWebTV</a></li>
             </ul>
           </li>
-          <li class=" parent_submenu_container"><a href="http://www.team-synergie.fr/forum/members/?type=staff">Le staff</a>
+          <li class="parent_submenu_container"><a href="http://www.team-synergie.fr/forum/members/?type=staff">Le staff</a>
             <ul class="main_nav_submenu">
               <li><a href="http://www.team-synergie.fr/forum/members/?type=staff">Organigramme</a></li>
               <li><a href="http://www.team-synergie.fr/forum/forums/contacter-le-staff.327/">Contacter le staff</a></li>
@@ -47,17 +47,21 @@
             </ul>
           </li>
 
-          <ul class="navbar-right">
+          <ul class="navbar-right" >
             <% if user_signed_in? %>
-              <li><%= current_user.nom %>
-                <li class=""><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to 'nouvel article', new_article_path %></li>
+            <li class="parent_submenu_container" id="nav"><a href="#"><%= current_user.pseudo  %></a>
+              <ul class="main_nav_submenu">
+                <li><%= link_to 'Modifier mon mot de passe' %></li>
+                <li><%= link_to 'nouvel article', main_app.new_article_path %></li>
+              </ul>
+            </li>
+            <li id="nav"><%= link_to "Se déconnecter", main_app.destroy_user_session_path, method: :delete %></li>
+            <li id="gravatar"><%= gravatar_image_tag current_user.email %></li>
 
             <% else %>
-              <li class=""><%= link_to "Se connecter", new_user_session_path %></li>
-              <li class=""><%= link_to "S'inscrire", new_user_registration_path %></li>
+              <li class=""><%= link_to "Se connecter", main_app.new_user_session_path %></li>
+              <li class=""><%= link_to "S'inscrire", main_app.new_user_registration_path %></li>
             <% end %>
-
           </ul>
 
 

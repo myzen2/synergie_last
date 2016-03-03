@@ -26,7 +26,6 @@
       <hr>
 
       <!-- Preview Image -->
-      <%= image_tag @article.image %>
 
       <hr>
 
@@ -34,7 +33,7 @@
 
       <p>
         <strong>Contenu :</strong>
-        <%= @article.contenu %>
+        <%= raw(@article.contenu) %>
       </p>
 
       <h2>Ajouter un commentaire :</h2>

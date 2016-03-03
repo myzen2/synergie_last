@@ -1,10 +1,13 @@
 /* Global */
 ::selection {
-	background-color: #4A4E51;
+	background-color: #000;
+	/*#4A4E51;*/
 	color: #0CF;
 }
 ::-moz-selection {
-	background-color: #4A4E51;
+	background-color: #000;
+	/*
+	#4A4E51;*/
 	color: #0CF;
 
 }

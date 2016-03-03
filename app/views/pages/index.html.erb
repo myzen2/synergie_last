@@ -11,42 +11,36 @@
         </div>
 
         <!-- Blog Entries Column -->
-        <div class="col-md-5 col-md-offset-2">
-
-            <% @articles.each do |article| %>
-                <h2><%= article.titre %></h2>
-                <p><span class="glyphicon glyphicon-time"></span> Publié le <%= article.created_at %></p>
-                <p>
-                  <%= image_tag article.image %>
-                </p>
-
-
-                <p class="apercu"><%= article.contenu[0...200] %></p>
-                <%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %>
-
-
-            <% end %>
-
+        <div class="col-md-5 col-md-offset-1">
+          <% @articles.each do |article| %>
+            <h2><%= article.titre %></h2>
+              <p><span class="glyphicon glyphicon-time"></span> Publié le <%= article.created_at %></p>
+              <p>
+                <%#= image_tag article.image %>
+              </p>
+              <p class="apercu"><%= article.contenu[0...200] %></p>
+              <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+          <% end %>
             <!-- Pager -->
-            <div class="">
-              <%= will_paginate @articles %>
-
-            </div>
+          <p>
+            <%= will_paginate @articles %>
+          </p>
 
         </div>
 
-        <%= render 'partials/side' %>
-
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-3 col-md-offset-2">
+          <%= render 'partials/side' %>
             <div class="well">
-                <h4><%= image_tag "twitch_logo" %></h4>
+              <h4><%= image_tag "twitch_logo" %></h4>
                 <p><iframe src="http://player.twitch.tv/?channel=synergiegaming" frameborder="0" scrolling="no" height="260" width="260"></iframe><a href="http://www.twitch.tv/synergiegaming?tt_medium=live_embed&tt_content=text_link" style="padding: 4px 10px 0px 0px; display:block; width:280px; font-weight:normal; font-size:10px;text-decoration:underline;">Suivez le live depuis SynergieGaming sur www.twitch.tv</a></p>
             </div>
 
-            <!-- TEAMSPEAK-->
+          <!-- TEAMSPEAK-->
             <div class="well">
-                <h4>Teamspeak</h4>
-                  <div id="teamspeak">
-                    <script type="text/javascript">
+              <h4>Teamspeak</h4>
+                <div id="teamspeak">
+                  <script type="text/javascript">
                     var ouvert = 1;
                     var style = "classic";
                     var couleur_fond = "EAEAEA";
@@ -59,15 +53,10 @@
                     var lang = "fr";
                     var taille_police = 12;
                     var voir_salons = 1;
-                    </script>
-                    <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
-
-                  </div>
+                  </script>
+                  <script type="text/javascript" src="https://www.ts3-serveur.com/web_script/webscript_ts3.js"></script>
                 </div>
-
-
-
-
+          </div>
     </div>
     <!-- /.row -->
 
