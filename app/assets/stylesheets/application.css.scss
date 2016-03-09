@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -24,12 +25,12 @@
 /* Padding below the footer and lighter body text */
 
 html {
-  background-color: #000;
+  background-color: #f6f6f6;
 }
 
 body {
   padding-bottom: 40px;
-  background-color: #000;
+  background-color: #f6f6f6;
 }
 
 h3 {
@@ -112,11 +113,9 @@ h1 {
 
 /* NAVBAR
 ----------------------------------------------------*/
-.main_nav
-{
+.main_nav {
 width: 100%;
 height: 40px;
-
 background-image: radial-gradient(circle, #2E68E2, #000000);
 background-repeat: repeat;
 background-attachment: scroll;
@@ -229,13 +228,10 @@ z-index: 1000;
   background-image: radial-gradient(circle, #1180FE, #000000);
 }
 
-.jumbotron {
-  margin-top: -80px;
-}
-
-.apercu {
-  background-color: #FFFFFF;
-  /*padding: 20px;*/
+.texte {
+  background-color: #fff;
+  border: 1px solid #1180FE;
+  padding: 20px;
   color: #000000;
   /*margin-bottom: 20px;*/
 }
@@ -245,10 +241,11 @@ SIDE right--
 ----------------------------------------------------
 ---------------------------------------------------*/
 .well {
-
-  margin-top: 20px;
+  position: relative;
+  float: right;
+  margin-top: 2%;
   text-align: center;
-  margin-left: 30px;
+  margin-right: -10%;
 }
 
 /* TEAMSPEAK
@@ -256,7 +253,6 @@ SIDE right--
 #teamspeak {
   width: 60%;
   opacity: 80%;
-  padding-left: 0%;
 }
 
 

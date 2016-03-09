@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301125343) do
+ActiveRecord::Schema.define(version: 20160309141701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: true do |t|
+  create_table "articles", force: :cascade do |t|
     t.string   "titre"
     t.text     "contenu"
     t.datetime "created_at", null: false
@@ -26,7 +26,24 @@ ActiveRecord::Schema.define(version: 20160301125343) do
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
-  create_table "comments", force: true do |t|
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "comments", force: :cascade do |t|
     t.string   "commenter"
     t.text     "body"
     t.integer  "article_id"
@@ -36,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160301125343) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
-  create_table "forem_categories", force: true do |t|
+  create_table "forem_categories", force: :cascade do |t|
     t.string   "name",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160301125343) do
 
   add_index "forem_categories", ["slug"], name: "index_forem_categories_on_slug", unique: true, using: :btree
 
-  create_table "forem_forums", force: true do |t|
+  create_table "forem_forums", force: :cascade do |t|
     t.string  "name"
     t.text    "description"
     t.integer "category_id"
@@ -57,27 +74,27 @@ ActiveRecord::Schema.define(version: 20160301125343) do
 
   add_index "forem_forums", ["slug"], name: "index_forem_forums_on_slug", unique: true, using: :btree
 
-  create_table "forem_groups", force: true do |t|
+  create_table "forem_groups", force: :cascade do |t|
     t.string "name"
   end
 
   add_index "forem_groups", ["name"], name: "index_forem_groups_on_name", using: :btree
 
-  create_table "forem_memberships", force: true do |t|
+  create_table "forem_memberships", force: :cascade do |t|
     t.integer "group_id"
     t.integer "member_id"
   end
 
   add_index "forem_memberships", ["group_id"], name: "index_forem_memberships_on_group_id", using: :btree
 
-  create_table "forem_moderator_groups", force: true do |t|
+  create_table "forem_moderator_groups", force: :cascade do |t|
     t.integer "forum_id"
     t.integer "group_id"
   end
 
   add_index "forem_moderator_groups", ["forum_id"], name: "index_forem_moderator_groups_on_forum_id", using: :btree
 
-  create_table "forem_posts", force: true do |t|
+  create_table "forem_posts", force: :cascade do |t|
     t.integer  "topic_id"
     t.text     "text"
     t.integer  "user_id"
@@ -93,12 +110,12 @@ ActiveRecord::Schema.define(version: 20160301125343) do
   add_index "forem_posts", ["topic_id"], name: "index_forem_posts_on_topic_id", using: :btree
   add_index "forem_posts", ["user_id"], name: "index_forem_posts_on_user_id", using: :btree
 
-  create_table "forem_subscriptions", force: true do |t|
+  create_table "forem_subscriptions", force: :cascade do |t|
     t.integer "subscriber_id"
     t.integer "topic_id"
   end
 
-  create_table "forem_topics", force: true do |t|
+  create_table "forem_topics", force: :cascade do |t|
     t.integer  "forum_id"
     t.integer  "user_id"
     t.string   "subject"
@@ -118,7 +135,7 @@ ActiveRecord::Schema.define(version: 20160301125343) do
   add_index "forem_topics", ["state"], name: "index_forem_topics_on_state", using: :btree
   add_index "forem_topics", ["user_id"], name: "index_forem_topics_on_user_id", using: :btree
 
-  create_table "forem_views", force: true do |t|
+  create_table "forem_views", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "viewable_id"
     t.datetime "created_at"
@@ -133,7 +150,7 @@ ActiveRecord::Schema.define(version: 20160301125343) do
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id", using: :btree
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "nom"
     t.string   "prenom"
     t.string   "pseudo"
@@ -149,12 +166,23 @@ ActiveRecord::Schema.define(version: 20160301125343) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        default: 0,                null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "articles", "users"
+  add_foreign_key "comments", "articles"
 end
