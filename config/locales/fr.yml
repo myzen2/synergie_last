@@ -122,11 +122,11 @@ fr:
     shared:
       links:
         didn_t_receive_confirmation_instructions: Vous n'avez pas reçu le mail de confirmation ?
-        didn_t_receive_unlock_instructions: Vous n'avez pas reçu le mail de débloquage ?
+        didn_t_receive_unlock_instructions: Vous n'avez pas reçu le mail de déblocage ?
         forgot_your_password: Mot de passe oublié ?
         sign_in: Connexion
         sign_in_with_provider: Connexion avec %{provider}
         sign_up: Inscription
     unlocks:
       new:
-        resend_unlock_instructions: Renvoyer les instructions de débloquage
+        resend_unlock_instructions: Renvoyer les instructions de déblocage

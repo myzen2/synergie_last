@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
+
+  def accueil
+    @articles = Article.last(3)    
+  end
+
   def index
     @articles = Article.all
   end

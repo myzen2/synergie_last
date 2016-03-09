@@ -16,6 +16,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require forem
+//= require ckeditor/init
 
 $(document).ready(function() {
 

@@ -8,6 +8,7 @@
     <%= javascript_include_tag "forem" %>
     <%= forem_atom_auto_discovery_link_tag %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'logo.png', type: 'image/png' %>
   </head>
@@ -23,9 +24,9 @@
 
        <%= render 'layouts/messages' %>
        <%= yield %>
+       <%= render 'layouts/footer' %>
      </div>
     </main>
-
 
 
   </body>
