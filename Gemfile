@@ -19,6 +19,7 @@ gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 group :development, :test do
   gem 'byebug'

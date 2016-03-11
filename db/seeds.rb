@@ -7,11 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #user = CreateAdminService.new.call
 #puts 'CREATED ADMIN USER: ' << user.email
+require 'faker'
+
+Article.delete_all
+User.delete_all
 
 Forem::Category.create!(:name => 'Jeux')
 
 user = User.create(
   :pseudo => "myzen2",
+  nom: Faker::Name.last_name,
+  prenom: Faker::Name.first_name,
   :email => "admin@example.com",
   :password => "admin1234"
 )
@@ -20,7 +26,7 @@ user.save!
 user.update_attribute(:forem_state, 'approved')
 
 unless user.nil?
-  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "Default", :description => "Default forem created by install")
+  forum = Forem::Forum.create(:category_id => Forem::Category.first.id, :name => "General", :description => "Default forem created by install")
 
   topic1 = forum.topics.build({ :subject => "Fifa", :posts_attributes => [:text => "Jouez à fifa c'est cool"] })
   topic1.user = user
@@ -38,4 +44,28 @@ unless user.nil?
   topic4.user = user
   topic4.save!
 
+end
+
+10.times do
+  Comment.create(
+    commenter: Faker::Lorem.name,
+    body: Faker::Lorem.sentences
+  )
+end
+
+10.times do
+  Article.create(
+    titre: Faker::Lorem.sentence,
+    contenu: Faker::Lorem.paragraph
+  )
+end
+
+50.times do
+  user = User.create(
+    :pseudo => Faker::App.name,
+    nom: Faker::Name.last_name,
+    prenom: Faker::Name.first_name,
+    :email => Faker::Internet.email,
+    :password => Faker::Internet.password(8)
+  )
 end
