@@ -19,6 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 fr:
+  will_paginate:
+    previous_label: "&#8592; Précédent"
+    next_label: "Suivant &#8594;"
+    page_gap: "&hellip;"
   devise:
     confirmations:
       new:
@@ -80,29 +84,25 @@ fr:
       not_saved:
         one: "1 erreur a empêché ce(tte) %{resource} d'être sauvegardé(e) :"
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
-
-  devise:
-    confirmations:
-
-    mailer:
-      confirmation_instructions:
-        action: Confirmer mon email
-        greeting: Bienvenue %{recipient} !
-        instruction: ! 'Vous pouvez confirmer votre email grâce au lien ci-dessous :'
-        subject: Instructions pour confirmer votre compte
-      reset_password_instructions:
-        action: Changer mon mot de passe
-        greeting: Bonjour %{recipient} !
-        instruction: ! 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
-        instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer cet email.
-        instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
-        subject: Instructions pour réinitialiser votre mot de passe
-      unlock_instructions:
-        action: Débloquer mon compte
-        greeting: Bonjour %{recipient} !
-        instruction: ! 'Suivez ce lien pour débloquer votre compte :'
-        message: Votre compte a été bloqué suite à un nombre d'essais de connexions manqués trop important
-        subject: Instructions pour débloquer votre compte
+  mailer:
+    confirmation_instructions:
+      action: Confirmer mon email
+      greeting: Bienvenue %{recipient} !
+      instruction: ! 'Vous pouvez confirmer votre email grâce au lien ci-dessous :'
+      subject: Instructions pour confirmer votre compte
+    reset_password_instructions:
+      action: Changer mon mot de passe
+      greeting: Bonjour %{recipient} !
+      instruction: ! 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
+      instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer cet email.
+      instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
+      subject: Instructions pour réinitialiser votre mot de passe
+    unlock_instructions:
+      action: Débloquer mon compte
+      greeting: Bonjour %{recipient} !
+      instruction: ! 'Suivez ce lien pour débloquer votre compte :'
+      message: Votre compte a été bloqué suite à un nombre d'essais de connexions manqués trop important
+      subject: Instructions pour débloquer votre compte
     passwords:
       new:
         forgot_your_password: Mot de passe oublié ?

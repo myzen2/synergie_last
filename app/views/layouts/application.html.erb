@@ -15,19 +15,14 @@
   <body>
     <header>
       <%= render "partials/header" %>
-
       <%= render "partials/navbar" %>
-
     </header>
     <main role="main">
       <div class="container">
-
        <%= render 'layouts/messages' %>
        <%= yield %>
        <%= render 'layouts/footer' %>
      </div>
     </main>
-
-
   </body>
 </html>

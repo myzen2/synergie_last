@@ -1,36 +1,23 @@
 <div class="container">
   <div class="row">
-
     <!-- Blog Post Content Column -->
-    <div class="col-lg-9">
-
+    <div class="col-lg-10 col-lg-offset-1">
       <!-- Blog Post -->
-
       <!-- Title -->
       <h1>
         <strong>Titre:</strong>
         <%= raw(@article.titre) %>
       </h1>
-
-
       <!-- Author -->
       <p class="lead">
         par <a href="#"><%= current_user.pseudo %> </a>
       </p>
-
       <hr>
-
       <!-- Date/Time -->
       <p><span class="glyphicon glyphicon-time"></span> Posté : <%= @article.created_at %></p>
-
       <hr>
-
       <!-- Preview Image -->
-
       <hr>
-
-
-
       <p>
         <strong>Contenu :</strong>
         <%= raw(@article.contenu) %>
@@ -39,28 +26,16 @@
       <h2>Ajouter un commentaire :</h2>
       <ul>
         <% if user_signed_in? %>
-
         <%= render 'comments/form' %>
-
         <% else %>
           <li>Vous devez être connecté pour ajouter un commentaire</li>
         <% end %>
-
       </ul>
 
       <h2>Commentaires</h2>
+      <%=  @article.comments.count %>
       <%= render @article.comments %>
-
-
-        <% if user_signed_in? %>
-        <%= link_to 'Editer', edit_article_path(@article), class: "btn btn-info" %> |
-        <%= link_to 'Tous les articles', articles_path, class: "btn btn-danger" %>
-
-
-        <% else %>
-
-        <% end %>
-        <%= link_to 'Retour', root_path, class: "btn btn-success" %>
+      <%= link_to 'Accueil', root_path, class: "btn btn-success" %>
     </div>
   </div>
 </div>

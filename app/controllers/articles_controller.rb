@@ -2,11 +2,16 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def accueil
-    @articles = Article.last(3)    
+    @articles = Article.order('created_at desc').limit(3)
   end
 
   def index
     @articles = Article.all
+  end
+
+  def blog
+    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page])
   end
 
   def new

@@ -9,17 +9,20 @@
 #puts 'CREATED ADMIN USER: ' << user.email
 require 'faker'
 
+Comment.delete_all
 Article.delete_all
 User.delete_all
+
+
 
 Forem::Category.create!(:name => 'Jeux')
 
 user = User.create(
-  :pseudo => "myzen2",
+  pseudo: "myzen2",
   nom: Faker::Name.last_name,
   prenom: Faker::Name.first_name,
-  :email => "admin@example.com",
-  :password => "admin1234"
+  email: "admin@example.com",
+  password: "admin1234"
 )
 user.forem_admin = true
 user.save!
@@ -46,26 +49,45 @@ unless user.nil?
 
 end
 
-10.times do
-  Comment.create(
-    commenter: Faker::Lorem.name,
-    body: Faker::Lorem.sentences
-  )
-end
 
-10.times do
-  Article.create(
-    titre: Faker::Lorem.sentence,
-    contenu: Faker::Lorem.paragraph
-  )
-end
 
 50.times do
   user = User.create(
-    :pseudo => Faker::App.name,
+    pseudo: Faker::App.name,
     nom: Faker::Name.last_name,
     prenom: Faker::Name.first_name,
-    :email => Faker::Internet.email,
-    :password => Faker::Internet.password(8)
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(8)
   )
+end
+
+
+Article.create(
+  user_id: user.id,
+  titre: Faker::Lorem.sentence,
+  contenu: Faker::Lorem.paragraph
+)
+
+10.times do
+  Article.create(
+    user_id: user.id,
+    titre: Faker::Lorem.sentence,
+    contenu: Faker::Lorem.paragraph()
+  )
+end
+
+article = Article.create(:user_id => user.id, titre: Faker::Lorem.sentence, contenu: Faker::Lorem.paragraph(2, true, 4))
+article.user = user
+article.save!
+
+comment = article.comments.build({ :commenter => Faker::Name.name, :body => Faker::Lorem.sentences })
+comment.article = article
+comment.save!
+
+10.times do
+  article.comments.create({
+    article_id: article.id,
+    commenter: Faker::Name.name,
+    body: Faker::Lorem.sentences
+  })
 end

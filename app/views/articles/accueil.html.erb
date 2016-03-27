@@ -9,30 +9,34 @@
     </div>
   </div>
 
+
   <!-- Blog Entries Column -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <!--div class="row"-->
-        <div class="col-md-6 col-md-offset-0" >
+  <!--div class="container"-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-2">
+          <%= render 'partials/side' %>
+        </div>
+        <div class="col-md-6 col-md-offset-1" >
+          <h2 classe="titre">Dernières news</h2>
           <% @articles.each do |article| %>
-          <h2><%= raw(article.titre) %></h2>
+          <h2><%= sanitize article.titre %></h2>
           <p><span class="glyphicon glyphicon-time"></span> Publié le <%= t(article.created_at) %></p>
           <!--p><%#= image_tag article.image %></p-->
           <div class="texte">
-            <p id="texte"><%= raw(article.contenu[0...200]) + '...' %></p>
+            <p id="texte"><%= sanitize article.contenu[0...200] + '...' %></p>
+            <br>
             <p><%= link_to ('Lire la suite <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, article_path(article), class: "btn btn-primary" %></p>
+            <br>
             <% end %>
           </div>
         </div>
-        <!--div class="row"-->
-        <div class="col-md-4 col-md-offset-1">
-          <%= render 'partials/side' %>
-        </div>
-        <!--/div-->
       </div>
     </div>
-  </main>
-  <hr>
+  </div>
+
+</main>
+<hr>
 
 <!-- /.container -->

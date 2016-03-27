@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>BLOG</h1>
+
+<% @articles.each do |article| %>
+  <div class=blog>
+    <p class="titre">
+      <%= sanitize article.titre %>
+    </p>
+    <p class="contenu">
+      <%= sanitize article.contenu %>
+    </p>
+    <p class="pseudo">
+      <%= current_user.pseudo %>
+    </p>
+
+  </div>
+<% end %>
+
+<div class="centre">
+  <%= will_paginate @articles, class: "digg_pagination" %>
+</div>
+
+</div>

@@ -1,4 +1,3 @@
-<% if Comment.any? %>
 <p>
   <strong>Pseudo :</strong>
   <%= comment.commenter %>
@@ -9,13 +8,14 @@
   <%= comment.body %>
 </p>
 
+<% if Comment.any? %>
+Pas de commentaire pour cet article
+<%else%>
 <p>
   <%= link_to 'Supprimer le Commentaire', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Etes-vous sûr ?' } %>
 </p>
-<%else%>
 <p>
-  Pas de commentaire pour cet article
 </p>
 <%end%>

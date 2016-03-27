@@ -6,5 +6,6 @@ class Article < ActiveRecord::Base
   validates_presence_of   :user_id
 
   default_scope -> {order('created_at DESC')}
+  self.per_page = 5
 
 end

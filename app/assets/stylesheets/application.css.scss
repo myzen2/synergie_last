@@ -1,26 +1,26 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
 
- */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "bootstrap/theme";
- @import "devise_bootstrap_views";
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap/theme";
+@import "devise_bootstrap_views";
 
 
- /* GLOBAL STYLES
+/* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
@@ -42,8 +42,9 @@ h1 {
 }
 
 /*main {
-  background-color: #FBF9E2;
+background-color: #FBF9E2;
 }*/
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -80,66 +81,66 @@ h1 {
 }
 
 .carousel-fade {
-    .carousel-inner {
-        .item {
-            transition-property: opacity;
-        }
-
-        .item,
-        .active.left,
-        .active.right {
-            opacity: 0;
-        }
-
-        .active,
-        .next.left,
-        .prev.right {
-            opacity: 1;
-        }
-
-        .next,
-        .prev,
-        .active.left,
-        .active.right {
-            left: 0;
-            transform: translate3d(0, 0, 0);
-        }
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
     }
 
-    .carousel-control {
-        z-index: 2;
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
     }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
 }
 
 /* NAVBAR
 ----------------------------------------------------*/
 .main_nav {
-width: 100%;
-height: 40px;
-background-image: radial-gradient(circle, #2E68E2, #000000);
-background-repeat: repeat;
-background-attachment: scroll;
-background-position: 0% 0%;
-background-clip: border-box;
-background-origin: padding-box;
-background-size: auto auto;
-position: relative;
-box-shadow: 1px 10px 12px #000000;
-position: relative;
+  width: 100%;
+  height: 40px;
+  background-image: radial-gradient(circle, #2E68E2, #000000);
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  position: relative;
+  box-shadow: 1px 10px 12px #000000;
+  position: relative;
 }
 
 #main_nav {
-width: 100%;
-background-image: radial-gradient(circle, #000000, #1180FE);
-background-repeat: repeat;
-background-attachment: scroll;
-background-position: 0% 0%;
-background-clip: border-box;
-background-origin: padding-box;
-background-size: auto auto;
-position: relative;
-box-shadow: 2px 12px 16px #000000;
-position: relative;
+  width: 100%;
+  background-image: radial-gradient(circle, #000000, #1180FE);
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  position: relative;
+  box-shadow: 2px 12px 16px #000000;
+  position: relative;
 }
 
 .main-nav-scrolled {
@@ -150,10 +151,10 @@ position: relative;
 
 #main_nav.main_nav_fixed
 {
-position: fixed;
-top: 0px;
-left: 0px;
-z-index: 1000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
 }
 
 .navbar-brand {
@@ -228,13 +229,13 @@ z-index: 1000;
   background-image: radial-gradient(circle, #1180FE, #000000);
 }
 
-.texte {
-  background-color: #fff;
-  border: 1px solid #1180FE;
-  padding: 20px;
-  color: #000000;
-  /*margin-bottom: 20px;*/
-}
+/*.texte {
+background-color: #fff;
+border: 1px solid #1180FE;
+padding: 20px;
+color: #000000;
+/*margin-bottom: 20px;*/
+/*}*/
 
 /*
 SIDE right--
@@ -278,6 +279,27 @@ th {
   color: #FFF;
   font-weight: bold;
 }
+
+/* BLOG
+==============================*/
+.blog {
+  margin-top: 40px;
+}
+
+.titre {
+  background-color: #000;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+.contenu {
+  font-size: 25px;
+}
+.pseudo {
+  color: #1077EC;
+  font-style: italic;
+}
+
 /*===========USER===============
 =============================*/
 .panneau {
@@ -345,7 +367,7 @@ th {
 /* Custom navbar fixed after scroll
 ----------------------------------------------------------*/
 /*html, body {
-	height: 4000px;
+height: 4000px;
 }*/
 
 .navbar-fixed {

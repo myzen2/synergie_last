@@ -10,7 +10,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise-bootstrap-views'
-gem 'puma'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'gravatar_image_tag', '~> 1.2'
@@ -40,8 +39,10 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
-  gem 'thin'
+
+  #gem 'thin', '~> 1.6', '>= 1.6.4'
 end
 group :production do
+  #gem 'puma'
   gem 'rails_12factor'
 end

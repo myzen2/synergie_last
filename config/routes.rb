@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
   # You can have the root of your site routed with "root"
   root 'articles#accueil'
+  get 'blog' => 'articles#blog'
 
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'users' => 'users#index'
+  mount Ckeditor::Engine => '/ckeditor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get "dashboard" => 'dashboard#index'

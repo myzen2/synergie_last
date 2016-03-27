@@ -19,5 +19,7 @@ module Synergie
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :fr
+    config.action_view.sanitized_allowed_tags = ['strong', 'em', 'a']
+    config.action_view.sanitized_allowed_attributes = ['href', 'title', 'titre', 'contenu']
   end
 end
