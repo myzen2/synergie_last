@@ -9,13 +9,13 @@
 </p>
 
 <% if Comment.any? %>
-Pas de commentaire pour cet article
-<%else%>
 <p>
   <%= link_to 'Supprimer le Commentaire', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Etes-vous sûr ?' } %>
+  method: :delete,
+  data: { confirm: 'Etes-vous sûr ?' } %>
 </p>
+<%else%>
 <p>
+  Pas de commentaire pour cet article, <%= link_to "connectez-vous", new_user_session_path %> pour en ajouter.
 </p>
 <%end%>

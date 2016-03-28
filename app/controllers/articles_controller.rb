@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
     if @article.save
       flash[:success] = "Votre article a bien été créé"
       redirect_to @article
-
     else
       render 'create'
     end
